@@ -1,0 +1,21 @@
+fastapi>=0.100.0 # Utilisation de fonctionnalités récentes de FastAPI/Pydantic V2
+uvicorn[standard]>=0.23.0
+sqlalchemy>=2.0.20 # Version stable de SQLAlchemy 2.0
+psycopg2-binary>=2.9.7 # Adaptateur PostgreSQL. Indispensable si DATABASE_URL est postgres.
+
+pydantic[email]>=2.4.0 # Pydantic V2 pour .model_dump() et from_attributes
+pydantic-settings>=2.0.3 # Pour la gestion de la configuration
+
+python-jose[cryptography]>=3.3.0 # Pour JWT
+passlib[bcrypt]>=1.7.4 # Pour le hachage de mot de passe
+
+alembic>=1.12.0 # Pour les migrations de base de données SQLAlchemy
+
+# Optionnel: pour charger les variables .env (si utilisé dans config.py)
+# python-dotenv>=1.0.0
+
+# Dépendances pour le développement et les tests (à ajouter si besoin)
+# pytest>=7.0.0
+# httpx>=0.24.0 # Client HTTP asynchrone pour tester l'API
+# black>=23.0.0 # Formatteur de code
+# ruff>=0.0.280 # Linter rapide

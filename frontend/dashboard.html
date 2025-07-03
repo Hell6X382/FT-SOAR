@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr" class="has-navbar-fixed-top has-background-dark has-text-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord - Orchestrateur Cyber</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="layout-default">
+
+    <!-- Barre de navigation -->
+    <nav class="navbar is-fixed-top is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="dashboard.html">
+                <img src="assets/logo_placeholder_shield.svg" width="28" height="28" alt="Logo" style="filter: invert(0.8); margin-right: 10px;">
+                <span class="has-text-weight-bold">Orchestrateur</span>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMain">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMain" class="navbar-menu is-dark">
+            <div class="navbar-start">
+                <a class="navbar-item is-active" href="dashboard.html"> <!-- is-active pour la page courante -->
+                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>&nbsp;Tableau de Bord
+                </a>
+                <a class="navbar-item" href="incidents.html">
+                    <span class="icon"><i class="fas fa-shield-alt"></i></span>&nbsp;Incidents
+                </a>
+                <a class="navbar-item" href="playbooks.html">
+                    <span class="icon"><i class="fas fa-robot"></i></span>&nbsp;Playbooks
+                </a>
+                <a class="navbar-item" href="connections.html">
+                    <span class="icon"><i class="fas fa-plug"></i></span>&nbsp;Connexions
+                </a>
+                <!-- Ajouter d'autres liens ici (ex: Rapports, Configurations) -->
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary is-small">
+                            <span class="icon"><i class="fas fa-plus"></i></span>
+                            <span>Nouvel Incident</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        <span class="icon"><i class="fas fa-user-circle"></i></span>&nbsp;
+                        <span id="userEmailDisplay">Utilisateur</span>
+                    </a>
+                    <div class="navbar-dropdown is-right is-boxed">
+                        <a class="navbar-item">
+                            <span class="icon"><i class="fas fa-user-cog"></i></span>&nbsp;Mon Profil
+                        </a>
+                        <a class="navbar-item">
+                            <span class="icon"><i class="fas fa-cog"></i></span>&nbsp;Paramètres Système
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item has-text-danger" id="logoutButton">
+                            <span class="icon"><i class="fas fa-sign-out-alt"></i></span>&nbsp;Déconnexion
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main class="section">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="breadcrumbs">
+              <ul>
+                <li class="is-active"><a href="#" aria-current="page"><span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span> Tableau de Bord</a></li>
+              </ul>
+            </nav>
+            <h1 class="title has-text-light">Tableau de Bord</h1>
+            <p class="subtitle has-text-grey-light">Vue d'ensemble des activités et métriques clés.</p>
+
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child box is-dark-themed-box notification is-info is-light">
+                        <p class="title">12</p>
+                        <p class="subtitle">Incidents Ouverts</p>
+                        <span class="icon is-large"><i class="fas fa-folder-open fa-2x"></i></span>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box is-dark-themed-box notification is-warning is-light">
+                        <p class="title">3</p>
+                        <p class="subtitle">Incidents Critiques</p>
+                         <span class="icon is-large"><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box is-dark-themed-box notification is-success is-light">
+                        <p class="title">97%</p>
+                        <p class="subtitle">Playbooks Réussis</p>
+                        <span class="icon is-large"><i class="fas fa-check-circle fa-2x"></i></span>
+                    </article>
+                </div>
+                 <div class="tile is-parent">
+                    <article class="tile is-child box is-dark-themed-box notification is-link is-light">
+                        <p class="title">5 min</p>
+                        <p class="subtitle">Temps Réponse Moyen</p>
+                        <span class="icon is-large"><i class="fas fa-stopwatch fa-2x"></i></span>
+                    </article>
+                </div>
+            </div>
+
+            <div class="box is-dark-themed-box mt-5">
+                <h2 class="title is-4 has-text-light">Activité Récente</h2>
+                <p>Cette section affichera un journal des activités récentes ou une liste des derniers incidents modifiés.</p>
+                <!-- Placeholder pour un graphique ou une liste -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer has-background-grey-darker has-text-light">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Orchestrateur d'Incidents de Cybersécurité</strong> &copy; 2023.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

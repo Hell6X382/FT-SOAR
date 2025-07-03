@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#CCCCCC">
+  <title>Logo Bouclier Placeholder</title>
+  <path d="M50,5 L90,25 L90,55 C90,75 70,90 50,95 C30,90 10,75 10,55 L10,25 Z M50,15 L80,30 L80,55 C80,70 65,80 50,85 C35,80 20,70 20,55 L20,30 Z" />
+  <polygon points="50,30 65,40 50,75 35,40" opacity="0.6"/>
+  <line x1="50" y1="5" x2="50" y2="35" stroke="#AAAAAA" stroke-width="3"/>
+</svg>

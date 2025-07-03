@@ -1,0 +1,337 @@
+/* Thème Sombre Global et Couleurs Personnalisées */
+:root {
+    --dark-background: #1e1e1e; /* Un peu plus clair que #1a1a1a */
+    --dark-surface: #2b2b2b;   /* Pour les cartes, boîtes */
+    --dark-border: #3c3c3c;
+    --dark-text-primary: #e0e0e0;
+    --dark-text-secondary: #b0b0b0;
+    --primary-color: #3273dc; /* Bulma default primary */
+    --primary-color-hover: #275fb3;
+    --link-color: #4a90e2; /* Bulma link color */
+    --link-color-hover: #7aaaff; /* Un bleu plus clair au survol */
+
+    --bulma-info-light: #3273dc20; /* Bulma info light (pour notifications) */
+    --bulma-info: #3273dc;
+    --bulma-warning-light: #ffdd5720;
+    --bulma-warning: #ffdd57;
+    --bulma-success-light: #48c78e20;
+    --bulma-success: #48c78e;
+    --bulma-link-light: #3298dc20;
+    --bulma-link: #3298dc; /* Différent du primary pour varier */
+
+}
+
+html.has-background-dark, body.layout-default {
+    background-color: var(--dark-background);
+    color: var(--dark-text-primary);
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Amélioration des scrollbars pour le thème sombre (Webkit) */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-background);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 5px;
+    border: 2px solid var(--dark-background);
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+/* Personnalisation des composants Bulma pour le mode sombre */
+
+.box.is-dark-themed-box, .message, .modal-card {
+    background-color: var(--dark-surface);
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 0.5em 1em -0.125em rgba(0,0,0,0.3), 0 0px 0 1px rgba(0,0,0,0.06);
+    border-radius: 6px;
+}
+
+.input, .textarea, .select select {
+    background-color: #383838; /* Légèrement plus clair que surface */
+    border-color: #505050; /* Bordure plus visible */
+    color: var(--dark-text-primary);
+    border-radius: 5px;
+}
+.input::placeholder, .textarea::placeholder {
+    color: var(--dark-text-secondary);
+}
+.input:focus, .textarea:focus, .select select:focus,
+.input:active, .textarea:active, .select select:active {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25); /* Ombre avec la couleur primaire */
+}
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: var(--primary-color);
+}
+
+.button.is-primary {
+    background-color: var(--primary-color);
+    border-color: transparent;
+    color: #fff;
+}
+.button.is-primary:hover {
+    background-color: var(--primary-color-hover);
+}
+.button.is-primary.is-light { /* Pour un look plus doux */
+    background-color: rgba(50, 115, 220, 0.15);
+    color: var(--primary-color);
+}
+.button.is-primary.is-light:hover {
+    background-color: rgba(50, 115, 220, 0.25);
+}
+
+
+.button.is-light {
+    background-color: #4a4a4a;
+    color: #fff;
+    border-color: #555555;
+}
+.button.is-light:hover {
+    background-color: #555555;
+    border-color: #666666;
+}
+
+
+/* Navbar */
+.navbar.is-dark {
+    background-color: #252525; /* Un peu plus foncé que la surface */
+    border-bottom: 1px solid var(--dark-border);
+}
+.navbar-item, .navbar-link {
+    color: var(--dark-text-secondary);
+    font-weight: 500;
+}
+.navbar-item:hover, .navbar-link:hover, .navbar-item.is-active { /* is-active pour la page courante */
+    background-color: #333333;
+    color: #fff;
+}
+.navbar-dropdown.is-boxed, .navbar-dropdown {
+    background-color: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-radius: 6px;
+}
+.navbar-dropdown .navbar-item {
+    color: var(--dark-text-secondary);
+}
+.navbar-dropdown .navbar-item:hover {
+    background-color: #383838;
+    color: #fff;
+}
+.navbar-burger span {
+    background-color: var(--dark-text-secondary);
+}
+
+/* Table */
+.table {
+    background-color: var(--dark-surface);
+    color: var(--dark-text-primary);
+}
+.table th {
+    color: #f0f0f0;
+    background-color: #333;
+    border-color: var(--dark-border);
+    border-width: 0 0 2px 0; /* Souligner les entêtes */
+}
+.table td {
+    border-color: var(--dark-border);
+    border-width: 0 0 1px 0;
+}
+.table tr:hover {
+    background-color: #383838 !important;
+}
+.table.is-striped tbody tr:nth-child(even) {
+    background-color: #303030;
+}
+.table.is-striped tbody tr:nth-child(even):hover {
+    background-color: #3f3f3f !important;
+}
+
+
+/* Footer */
+.footer {
+    background-color: #252525;
+    color: var(--dark-text-secondary);
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--dark-border);
+}
+.footer strong {
+    color: #fff;
+}
+
+/* Messages & Notifications */
+.message { /* S'applique à tous les messages, puis on spécialise */
+    border-radius: 5px;
+}
+.message.is-dark {
+    background-color: #363636;
+}
+.message.is-dark .message-header {
+    background-color: #222;
+    color: #fff;
+}
+.message.is-dark .message-body {
+    border-color: #222;
+    color: var(--dark-text-primary);
+}
+
+/* Notifications pour le tableau de bord */
+.notification.is-info.is-light { background-color: var(--bulma-info-light); color: var(--bulma-info); }
+.notification.is-warning.is-light { background-color: var(--bulma-warning-light); color: var(--bulma-warning); }
+.notification.is-success.is-light { background-color: var(--bulma-success-light); color: var(--bulma-success); }
+.notification.is-link.is-light { background-color: var(--bulma-link-light); color: var(--bulma-link); }
+
+.notification .title, .notification .subtitle {
+    color: inherit; /* Hériter la couleur de la notification */
+}
+.notification .icon.is-large { /* Pour les icônes dans les tuiles du dashboard */
+    float: right;
+    opacity: 0.5;
+}
+
+
+/* Titres */
+.title, .subtitle {
+    color: var(--dark-text-primary);
+}
+.title.has-text-light, .subtitle.has-text-light {
+    color: #f5f5f5 !important;
+}
+.subtitle.has-text-grey-light {
+    color: var(--dark-text-secondary) !important;
+}
+
+/* Liens */
+a {
+    color: var(--link-color);
+    font-weight: 500;
+}
+a:hover {
+    color: var(--link-color-hover);
+}
+
+.icon {
+    color: #888;
+}
+.input:focus ~ .icon.is-left, .textarea:focus ~ .icon.is-left {
+    color: var(--primary-color);
+}
+
+/* Modal */
+.modal-card {
+    border-radius: 6px;
+}
+.modal-card-head, .modal-card-foot {
+    background-color: #333;
+    border-color: var(--dark-border);
+}
+.modal-card-title {
+    color: #fff;
+}
+.modal-card-body {
+    background-color: var(--dark-surface);
+    color: var(--dark-text-primary);
+}
+
+/* Pagination */
+.pagination-link, .pagination-previous, .pagination-next {
+    background-color: #333;
+    border-color: var(--dark-border);
+    color: var(--dark-text-primary);
+    font-weight: bold;
+}
+.pagination-link:hover, .pagination-previous:hover, .pagination-next:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.pagination-link.is-current {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Tabs */
+.tabs a {
+    color: var(--dark-text-secondary);
+    border-bottom-color: var(--dark-border);
+}
+.tabs a:hover {
+    color: #fff;
+    border-bottom-color: #777;
+}
+.tabs li.is-active a {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Breadcrumb */
+.breadcrumb a {
+    color: var(--link-color);
+}
+.breadcrumb li.is-active a {
+    color: var(--dark-text-primary);
+    font-weight: bold;
+}
+.breadcrumb li+li::before { /* Séparateur */
+    color: var(--dark-text-secondary);
+}
+
+/* Utilitaires */
+.ml-2 { margin-left: 0.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.is-size-7 { font-size: 0.75rem !important; }
+
+/* Style pour le logo sur la page de connexion */
+#loginForm + .has-text-grey-light { /* Cibler le <p> après le formulaire */
+    font-size: 0.9em;
+}
+
+/* Placeholder pour les futures icônes de sévérité */
+.severity-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+.severity-low { background-color: #5cb85c; } /* Vert */
+.severity-medium { background-color: #f0ad4e; } /* Orange */
+.severity-high { background-color: #d9534f; } /* Rouge */
+.severity-critical { background-color: #8b0000; } /* Rouge foncé / Violet */
+
+/* Style pour les tags (si utilisés plus tard) */
+.tag:not(body) {
+    background-color: #444;
+    color: #ddd;
+}
+.tag:not(body).is-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.tag:not(body).is-info {
+    background-color: var(--bulma-info);
+    color: #fff;
+}
+
+/* S'assurer que le HTML a bien la classe pour le thème sombre si JS ne le fait pas */
+html:not(.has-background-dark) {
+    background-color: var(--dark-background); /* Fallback au cas où */
+}
+html:not(.has-background-dark) body {
+    color: var(--dark-text-primary);
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr" class="has-background-dark has-text-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Orchestrateur Cyber</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Icônes (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="layout-default">
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-light">Connexion</h3>
+                    <p class="subtitle has-text-grey-light">Orchestrateur d'Incidents de Cybersécurité</p>
+                    <div class="box is-dark-themed-box">
+                        <figure class="image is-96x96 mx-auto mb-5">
+                            <!-- Remplacer par un vrai logo SVG ou PNG -->
+                            <img src="assets/logo_placeholder_shield.svg" alt="Logo Orchestrateur" style="filter: invert(0.8);">
+                        </figure>
+                        <form id="loginForm">
+                            <div class="field">
+                                <div class="control has-icons-left">
+                                    <input class="input is-medium" type="email" id="email" placeholder="Adresse Email" autocomplete="email" required>
+                                    <span class="icon is-left">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control has-icons-left">
+                                    <input class="input is-medium" type="password" id="password" placeholder="Mot de passe" autocomplete="current-password" required>
+                                    <span class="icon is-left">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <button type="submit" class="button is-block is-primary is-fullwidth is-medium">
+                                    Se connecter <i class="fas fa-sign-in-alt fa-fw ml-2"></i>
+                                </button>
+                            </div>
+                        </form>
+                         <div id="loginError" class="has-text-danger mt-3" style="display: none;"></div>
+                    </div>
+                    <p class="has-text-grey-light mt-4">
+                        <a href="#">Mot de passe oublié?</a> &nbsp;·&nbsp;
+                        <a href="mailto:support@example.com">Support</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+         <footer class="footer has-background-grey-darker has-text-light is-size-7" style="padding: 1rem 1.5rem;">
+            <div class="content has-text-centered">
+                <p>
+                    &copy; 2023 Orchestrateur Cyber. Tous droits réservés.
+                </p>
+            </div>
+        </footer>
+    </section>
+    <script src="js/auth.js"></script>
+</body>
+</html>
